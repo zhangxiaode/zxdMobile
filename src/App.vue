@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <a href="javascript:;" class="fullIcon" @click="toggleFullScreen"></a>
-    <Footer></Footer>
+    <!-- <a href="javascript:;" class="fullIcon" @click="toggleFullScreen"></a> -->
     <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
@@ -16,13 +16,15 @@ export default {
     }
   },
   computed: {
-    isFullscreen() {
-      return document.fullScreen||document.mozFullScreen||document.webkitIsFullScreen
-    }
   },
   created () {
   },
   mounted () {
+    this.$ajax.post('/hello',{}).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
   methods: {
     toggleFullScreen(e){

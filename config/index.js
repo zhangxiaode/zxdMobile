@@ -11,8 +11,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/pro_personal': {
-        target: 'http://test-html5.8531.cn/',
+      '/apis': {
+        target: 'http://10.100.4.64:8888',
         changeOrigin: true,
         // pathRewrite: {
         //   '^/pro_personal': ''
