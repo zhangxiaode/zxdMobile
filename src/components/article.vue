@@ -1,0 +1,24 @@
+<template>
+  <div class="article">
+    article
+  </div>
+</template>
+
+<script>
+/**
+ * 页面头部导航
+ */
+export default {
+  name: "article",
+  data() {
+    return {
+    }
+  },
+  methods: {
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="less">
+</style>

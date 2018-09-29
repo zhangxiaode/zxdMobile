@@ -2,15 +2,12 @@
   <div id="app">
     <!-- <a href="javascript:;" class="fullIcon" @click="toggleFullScreen"></a> -->
     <router-view></router-view>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Footer from '@/components/footer'
 export default {
   name: 'App',
-  components: { Footer },
   data () {
     return {
     }
