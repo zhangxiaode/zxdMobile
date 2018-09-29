@@ -45,13 +45,14 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 .footer{
-  position: absolute;bottom:0;left:0;z-index:99;width:100%;height:1.02rem;
+  position: fixed;bottom:0;left:0;z-index:99;width:100%;height:1.02rem;
   display:flex;justify-content: space-around;align-items: center;
-  border-top:solid 0.02rem #F5F5F5;
+  border-top:solid 0.02rem #666;background:rgba(0,0,0,1);
   box-sizing:border-box;
+  overflow:hidden;
   a{
     height:1.02rem;line-height:1.02rem;
-    color:#5A5A5A;font-size:0.32rem;
+    color:#fff;font-size:0.32rem;
     flex:1;text-align:center;
     i{
       margin-right:0.05rem;

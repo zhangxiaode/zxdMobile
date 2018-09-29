@@ -17,14 +17,22 @@ export default {
   },
   computed: {
   },
+  beforeCreate () {
+    // if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    //   window.location.href="http://www.zhangxiaode.com/mobile/#/homepage"
+    // }
+    // else {
+    //   window.location.href="http://www.zhangxiaode.com"
+    // }
+  },
   created () {
   },
   mounted () {
-    this.$ajax.post('/hello',{}).then(res => {
-      console.log(res)
-    }).catch(err => {
-      console.log(err)
-    })
+    // this.$ajax.post('/hello',{}).then(res => {
+    //   console.log(res)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
   },
   methods: {
     toggleFullScreen(e){
@@ -47,6 +55,7 @@ export default {
 
 <style lang="less">
 #app {
+  background:url(./assets/bodybg.jpg) repeat center center;
   position:relative;width:100%;height:100%;
   overflow-y: auto;overflow-x: hidden;
   .fullIcon{
