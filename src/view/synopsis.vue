@@ -24,15 +24,40 @@
           <span class="tit">性别</span>
           <span class="cont">男</span>
         </li>
+        <li>
+          <span class="tit">民族</span>
+          <span class="cont">汉</span>
+        </li>
+        <li>
+          <span class="tit">别名</span>
+          <span class="cont">风清扬（阿里巴巴内部花名）</span>
+        </li>
       </ul>
-      <div class="relate">
-        <div class="relateItem">
-          <img :src="bannerList[0].img" alt="">
-          <h3>大师傅</h3>
-          <p>阿斯蒂芬</p>
-        </div>
-      </div>
       <div class="experience">
+        <div class="experItem">
+          <div class="experHd">
+            人物关系
+          </div>
+          <div class="experBd">
+            <div class="relate">
+              <div class="relateItem">
+                <img :src="bannerList[0].img" alt="">
+                <h3>大师傅</h3>
+                <p>阿斯蒂芬</p>
+              </div>
+              <div class="relateItem">
+                <img :src="bannerList[0].img" alt="">
+                <h3>大师傅</h3>
+                <p>阿斯蒂芬</p>
+              </div>
+              <div class="relateItem">
+                <img :src="bannerList[0].img" alt="">
+                <h3>大师傅</h3>
+                <p>阿斯蒂芬</p>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="experItem">
           <div class="experHd">
             个人经历
@@ -90,9 +115,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 .synopsis{
-  color:#ccc;font-size:0.28rem;
+  color:#ccc;font-size:0.36rem;line-height:0.6rem;
   .scroll{
-    height:3rem;
+    height:4rem;
     .mint-swipe-item{
       display:relative;text-align:center;
     }
@@ -125,18 +150,18 @@ export default {
   .brief{
     border-bottom:solid 0.02rem #666;
     h2{
-      font-size:0.38rem;font-weight:normal;color:#fff;
-      line-height:0.8rem;
+      font-size:0.48rem;font-weight:normal;color:#fff;
+      line-height:1.1rem;
     }
     p{
-      text-indent:0;margin-bottom:0.2rem;
+      text-indent:0;margin-bottom:0.2rem;font-size:0.32rem;
     }
   }
   .story{
     padding:0.2rem 0;
   }
   .info{
-    padding-bottom:0.5rem;
+    padding-bottom:0.1rem;
     li{
       line-height:1.5;overflow:hidden;
       span{
@@ -148,28 +173,31 @@ export default {
     }
   }
   .relate{
-    border-top:solid 0.1rem #666;border-bottom:solid 0.1rem #666;
-    height:2rem;
+    border-top:solid 0.1rem #333;border-bottom:solid 0.1rem #333;
+    margin:0 -0.2rem;padding:0.2rem 0;
+    height:2.6rem;overflow:hidden;
     .relateItem{
       display:flex;flex-direction: column;justify-content: center;align-items:center;
-      float:left;width:2rem;height:2rem;
+      float:left;width:2rem;height:2.6rem;
       text-align:center;
       img{
-        border-radius:0.5rem;background:#f00;
-        width:1rem;height:1rem;
+        border-radius:0.8rem;background:#f00;
+        width:1.6rem;height:1.6rem;
         overflow:hidden;
       }
+      h3{
+        font-size:0.28rem;font-weight:normal;
+      }
       p{
-        margin-bottom:0;text-indent:0;
+        margin-bottom:0;text-indent:0;font-size:0.26rem;color:#888;
       }
     }
   }
   .experience{
     .experItem{
-      padding:0.2rem 0;
       .experHd{
         font-size:0.38rem;font-weight:normal;color:#fff;
-        line-height:0.8rem;
+        line-height:1.1rem;
       }
     }
   }
