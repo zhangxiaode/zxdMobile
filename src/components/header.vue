@@ -11,36 +11,36 @@
  * 页面头部导航
  */
 export default {
-  name: "layoutHeader",
-  data() {
+  name: 'layoutHeader',
+  data () {
     return {
       navCurrent: 0,
       navList: [
         {
-          path: "/layout/homepage",
-          icon: "&#xe6cb;",
-          value: "首页"
+          path: '/layout/homepage',
+          icon: '&#xe6cb;',
+          value: '首页'
         },
         {
-          path: "/layout/travel",
-          icon: "&#xe67f;",
-          value: "旅游"
+          path: '/layout/travel',
+          icon: '&#xe67f;',
+          value: '旅游'
         },
         {
-          path: "/layout/synopsis",
-          icon: "&#xe657;",
-          value: "简介"
+          path: '/layout/synopsis',
+          icon: '&#xe657;',
+          value: '简介'
         }
       ]
-    };
+    }
   },
   methods: {
-    changeNav(index) {
+    changeNav (index) {
       // 导航跳转
       this.navCurrent = index
     }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

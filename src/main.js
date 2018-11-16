@@ -8,13 +8,13 @@ import store from './store'
 import '@/style/reset.less'
 import '@/style/common.less'
 
-import Mint from 'mint-ui'
-import 'mint-ui/lib/style.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 import ajax from '@/utils/ajax'
-Vue.use(Mint)
+Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false
-Vue.prototype.$ajax=ajax
+Vue.prototype.$ajax = ajax
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
@@ -23,7 +23,7 @@ new Vue({
   components: { App },
   mounted () {
     document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px'
-    window.addEventListener('resize', function () { 
+    window.addEventListener('resize', function () {
       document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px'
     })
   },

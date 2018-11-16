@@ -1,12 +1,15 @@
 <template>
   <div class="synopsis">
     <div class="scroll">
-      <mt-swipe :auto="4000">
-        <mt-swipe-item v-for="(item,index) in bannerList" :key="index">
+      <swiper :options="swiperOption" ref="mySwiper">
+        <!-- slides -->
+        <swiper-slide v-for="(item,index) in bannerList" :key="index">
           <img :src="item.img" alt="">
           <p>{{item.text}}</p>
-        </mt-swipe-item>
-      </mt-swipe>
+        </swiper-slide>
+        <!-- Optional controls -->
+        <div class="swiper-pagination"  slot="pagination"></div>
+      </swiper>
     </div>
     <div class="synWrap">
       <div class="brief">
@@ -77,11 +80,23 @@
 </template>
 
 <script>
-import {  } from '@/utils/index'
+import {} from '@/utils/index'
 export default {
   name: 'synopsis',
   data () {
     return {
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        observer: true, // 修改swiper自己或子元素时，自动初始化swiper
+        observeParents: true, // 修改swiper的父元素时，自动初始化swiper
+        loop: false,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false
+        }
+      },
       bannerList: [
         {
           img: require('../assets/banner1.jpg'),
@@ -104,7 +119,7 @@ export default {
   },
   computed: {
   },
-  components: {  },
+  components: {},
   mounted () {
   },
   methods: {
@@ -117,18 +132,21 @@ export default {
 .synopsis{
   color:#ccc;font-size:0.36rem;line-height:0.6rem;
   .scroll{
-    height:4rem;
-    .mint-swipe-item{
-      display:relative;text-align:center;
+    height:3rem;
+    .swiper-container{
+      height:100%;
     }
-    .mint-swipe-indicators{
-      left:auto;right:0.2rem;z-index:3;
-      transform:translateX(0);
+    .swiper-pagination{
+      border-radius:0.02rem;overflow:hidden;width:auto;height:0.04rem;
+      bottom:0.2rem;right:0.24rem;left:auto;
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
     }
-    .mint-swipe-indicator{
-      opacity:1;background:#999;
+    .swiper-pagination-bullet{
+      float:left;width:0.2rem;height:0.04rem;border-radius:0;
+      margin:0;opacity:1;background:rgba(255,255,255,0.3);
     }
-    .mint-swipe-indicator.is-active{
+    .swiper-pagination-bullet-active{
       background:#fff;
     }
     img{
