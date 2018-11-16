@@ -15,12 +15,12 @@ export default {
   computed: {
   },
   beforeCreate () {
-    // if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-    //   window.location.href="http://www.zhangxiaode.com/mobile/#/layout/homepage"
-    // }
-    // else {
-    //   window.location.href="http://www.zhangxiaode.com"
-    // }
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+      window.location.pathname="/mobile"
+    }
+    else {
+      window.location.pathname="/"
+    }
   },
   created () {
   },
