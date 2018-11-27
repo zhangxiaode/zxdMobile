@@ -4,6 +4,7 @@ import Layout from '@/view/layout.vue'
 import Homepage from '@/view/homepage.vue'
 import Travel from '@/view/travel.vue'
 import Synopsis from '@/view/synopsis.vue'
+import Resume from '@/view/resume.vue'
 import Article from '@/components/article.vue'
 Vue.use(Router)
 
@@ -39,6 +40,11 @@ export default new Router({
       path: '/article',
       name: 'article',
       component: Article
+    },
+    {
+      path: '/resume',
+      name: 'resume',
+      component: Resume
     }
   ]
 })
