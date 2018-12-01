@@ -8,22 +8,22 @@
 </template>
 
 <script>
-import {} from "@/utils/index";
+import {} from '@/utils/index'
 export default {
-  name: "homepage",
-  data() {
+  name: 'homepage',
+  data () {
     return {
       banner: {
-        img: require("../assets/banner1.jpg"),
-        text: "this is banner1"
+        img: require('../assets/banner1.jpg'),
+        text: 'this is banner1'
       }
     }
   },
   computed: {},
   components: {},
-  mounted() {},
+  mounted () {},
   methods: {}
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

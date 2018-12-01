@@ -9,14 +9,14 @@
  * 页面头部导航
  */
 export default {
-  name: "article",
-  data() {
+  name: 'article',
+  data () {
     return {
     }
   },
   methods: {
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

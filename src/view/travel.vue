@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {  } from '@/utils/index'
+import {} from '@/utils/index'
 export default {
   name: 'travel',
   data () {
@@ -125,23 +125,23 @@ export default {
   },
   computed: {
   },
-  components: {  },
+  components: {},
   mounted () {
   },
   methods: {
-    enlarge(item) {
+    enlarge (item) {
       this.showDialog = true
       this.currentItem.img = item.img
       this.currentItem.text = item.text
       this.currentItem.width = '100%'
       this.currentItem.height = '100%'
     },
-    narrow(currentItem) {
+    narrow (currentItem) {
       this.currentItem.width = '0'
       this.currentItem.height = '0'
       setTimeout(() => {
         this.showDialog = false
-      },500)
+      }, 500)
     }
   }
 }
