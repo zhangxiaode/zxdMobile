@@ -1,7 +1,7 @@
 <template>
-  <div class="travel">
-    <div class="photoItem" v-for="(item,index) in photoList" :key="index" @click="enlarge(item)">
-      <img :src="item.img" alt="">
+  <div class="travel" @scroll="scrollTravel">
+    <div class="photoItem" ref="travelPhoto" v-for="(item,index) in photoList" :key="index" @click="enlarge(item)">
+      <img :src="item.dataSrc" alt="">
       <p>{{item.text}}</p>
     </div>
     <div class="dialogBg" v-if="showDialog"></div>
@@ -23,94 +23,117 @@ export default {
       photoList: [
         {
           img: require('../assets/photo1.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo2.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo3.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo4.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo5.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo6.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo7.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo8.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo9.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo10.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo12.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo13.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo14.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo15.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo16.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo17.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo18.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo19.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo20.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo21.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo22.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo23.jpg'),
+          dataSrc: '',
           text: ''
         },
         {
           img: require('../assets/photo24.jpg'),
+          dataSrc: '',
           text: ''
         }
       ],
@@ -127,8 +150,23 @@ export default {
   },
   components: {},
   mounted () {
+    this.lazyload()
   },
   methods: {
+    scrollTravel () {
+      this.lazyload()
+    },
+    lazyload () {
+      this.photoList.map((item, index) => {
+        var seeHeight = document.documentElement.clientHeight
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+        if (this.$refs.travelPhoto[index].offsetTop < seeHeight + scrollTop) {
+          this.$nextTick(() => {
+            item.dataSrc = item.img
+          })
+        }
+      })
+    },
     enlarge (item) {
       this.showDialog = true
       this.currentItem.img = item.img
@@ -150,8 +188,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 .travel {
-  column-count: 3;column-gap: 0.2rem;
+  // column-count: 3;column-gap: 0.2rem;
+  box-sizing:border-box;overflow-x:hidden;overflow-y:scroll;
   padding: 0.2rem;
+  height:100%;
   .photoItem {
     transition:all 0.5s;transform-origin: center center;transform:scale(1,1);
     margin: 0 0 0.2rem;
