@@ -24,11 +24,26 @@ export default {
   created () {
   },
   mounted () {
-    // this.$ajax.post('/hello',{}).then(res => {
-    //   console.log(res)
-    // }).catch(err => {
-    //   console.log(err)
-    // })
+    this.$ajax.get('/findUser', {}).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+    this.$ajax.get('/addUser', {}).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+    this.$ajax.get('/updateUser', {}).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+    this.$ajax.get('/deleteUser', {}).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
   },
   methods: {
     toggleFullScreen (e) {
