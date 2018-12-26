@@ -24,22 +24,22 @@ export default {
   created () {
   },
   mounted () {
-    this.$ajax.get('/findUser', {}).then(res => {
+    this.$ajax.get('/user/findUser', {}).then(res => {
       console.log(res)
     }).catch(err => {
       console.log(err)
     })
-    this.$ajax.get('/addUser', {}).then(res => {
+    this.$ajax.get('/user/addUser', {}).then(res => {
       console.log(res)
     }).catch(err => {
       console.log(err)
     })
-    this.$ajax.get('/updateUser', {}).then(res => {
+    this.$ajax.get('/user/updateUser', {}).then(res => {
       console.log(res)
     }).catch(err => {
       console.log(err)
     })
-    this.$ajax.get('/deleteUser', {}).then(res => {
+    this.$ajax.get('/user/deleteUser', {}).then(res => {
       console.log(res)
     }).catch(err => {
       console.log(err)

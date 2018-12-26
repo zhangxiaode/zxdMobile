@@ -11,7 +11,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/apis': {
+      '/zxd_mobile': {
         target: 'http://10.100.4.64:9090',
         changeOrigin: true,
         // pathRewrite: {
