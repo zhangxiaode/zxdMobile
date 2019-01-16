@@ -44,16 +44,16 @@ export default {
     }).catch(err => {
       console.log(err)
     })
-    // this.$ajax.get('/login2', {code: '001IVJEn1ng6sq0b06Fn1dQtEn1IVJEB'}).then(res => {
-    //   console.log(res)
-    // }).catch(err => {
-    //   console.log(err)
-    // })
-    this.$ajax.get('/login', {code: '001IVJEn1ng6sq0b06Fn1dQtEn1IVJEB'}).then(res => {
+    this.$ajax.post('/login2', {code: '001IVJEn1ng6sq0b06Fn1dQtEn1IVJEB'}).then(res => {
       console.log(res)
     }).catch(err => {
       console.log(err)
     })
+    // this.$ajax.get('/login', {code: '001IVJEn1ng6sq0b06Fn1dQtEn1IVJEB'}).then(res => {
+    //   console.log(res)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
   },
   methods: {
     toggleFullScreen (e) {
