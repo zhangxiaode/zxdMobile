@@ -14,13 +14,6 @@ export default {
   },
   computed: {
   },
-  beforeCreate () {
-    // if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
-    //   window.location.href = 'http://www.zhangxiaode.com/mobile/#/layout/homepage'
-    // } else {
-    //   window.location.href = 'http://www.zhangxiaode.com/#/homepage'
-    // }
-  },
   created () {
   },
   mounted () {
@@ -44,11 +37,11 @@ export default {
     }).catch(err => {
       console.log(err)
     })
-    this.$ajax.post('/login2', {code: '001IVJEn1ng6sq0b06Fn1dQtEn1IVJEB'}).then(res => {
-      console.log(res)
-    }).catch(err => {
-      console.log(err)
-    })
+    // this.$ajax.post('/login2', {code: '001IVJEn1ng6sq0b06Fn1dQtEn1IVJEB'}).then(res => {
+    //   console.log(res)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
     // this.$ajax.get('/login', {code: '001IVJEn1ng6sq0b06Fn1dQtEn1IVJEB'}).then(res => {
     //   console.log(res)
     // }).catch(err => {
