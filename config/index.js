@@ -12,7 +12,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/apis': {
-        target: 'http://10.100.4.64:9090',
+        // target: 'http://10.100.4.64:9090',
+        target: 'https://m.zxdkxl.com',
         changeOrigin: true,
         // pathRewrite: {
         //   '^/pro_personal': ''
